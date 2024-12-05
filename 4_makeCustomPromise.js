@@ -28,3 +28,20 @@ const doNothingWithNumbers = calculator().catch(() => undefined);
 console.log("addNumbers>>>", addNumbers);
 console.log("subtractNumbers>>>", subtractNumbers);
 console.log("doNothingWithNumbers>>>", doNothingWithNumbers);
+
+const promiseForSettimeoutCallback = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("I am resolved");
+      reject("I am rejected");
+    }, 2000);
+  });
+};
+
+const setTimeOutPromise = promiseForSettimeoutCallback();
+
+console.log("setTimeOutPromise>>>", setTimeOutPromise);
+
+setTimeOutPromise
+  .then((res) => console.log("Promise Resolved 1: ", res))
+  .catch((err) => console.log("Error Message 1: ", err));

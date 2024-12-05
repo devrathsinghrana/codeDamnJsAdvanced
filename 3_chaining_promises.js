@@ -13,7 +13,16 @@ myPromise
 
 myErrorPromise
   .then((res) => console.log("My res: ", res))
-  .catch((err) => console.log("Error logged: ", err))
-  .then(() => fetch("/data.json"))
+  .catch((err) => {
+    console.log("Error logged: ", err);
+
+    return { lol: "ALWAYS" };
+  })
+  .then((res) => {
+    console.log("O/P instantly after catch: ", res);
+    return fetch("/data.json");
+  })
   .then((res) => res.json())
   .then((res) => console.log("My res after catch: ", res));
+
+const chainingCatchPromise = getMyPromise();

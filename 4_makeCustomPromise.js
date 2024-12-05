@@ -22,7 +22,8 @@ function calculator(num1, num2, operation) {
 
 const addNumbers = calculator(23, 23, "+");
 const subtractNumbers = calculator(23, 23, "-");
-const doNothingWithNumbers = calculator();
+// const doNothingWithNumbers = calculator(); //This will give error as we have not used catch to handle rejected response - https://stackoverflow.com/questions/57750916/what-does-uncaught-in-promise-mean
+const doNothingWithNumbers = calculator().catch(() => undefined);
 
 console.log("addNumbers>>>", addNumbers);
 console.log("subtractNumbers>>>", subtractNumbers);

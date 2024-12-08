@@ -6,19 +6,13 @@ Also, make sure, if a promise “fails”, you return null value for that.
 */
 
 async function fn(...promises) {
-  // resolve them all
-  // add one to all of them
-
   const responses = await Promise.allSettled([...promises]);
-
   const successResponsesReq = responses.filter(
     (res) => res.status === "fulfilled"
   );
-
   const successResponses = successResponsesReq.map((res) => {
     return res.value;
   });
-
   const requiredResponse = await Promise.all(
     successResponses.map((t) => t.json())
   );

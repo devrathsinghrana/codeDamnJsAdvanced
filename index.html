@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #event-container {
+            background-color: red;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +20,10 @@
     <button id="my-button">Click1</button>
     <button id="my-second-button">Click2</button>
     <button id="my-third-button">Create h1</button>
-    <script src="12_addEventListenerVsOnclick.js"></script>
+    <div id="event-container">
+        <button id="event-btn">Click Me to trigger event</button>
+    </div>
+    <script src="13_eventBubblingCapturingStopPropagation.js"></script>
 </body>
 
 </html>

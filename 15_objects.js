@@ -1,3 +1,15 @@
+const w = 120;
+const x = 120;
+const y = { key: 23 };
+const z = { key: 23 };
+const m = y;
+console.log("w===x", w === x);
+console.log("y===z", y === z);
+console.log("y===m", y === m);
+
+console.log("NaN === NaN", NaN === NaN);
+console.log("[NaN].includes(NaN)", [NaN].includes(NaN));
+
 const obj = {
   name: "Devrath",
   age: 23,
